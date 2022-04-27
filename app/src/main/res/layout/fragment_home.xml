@@ -50,8 +50,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nom Usuari..."
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -60,7 +60,7 @@
         android:ems="10"
         android:hint="Contrasenhya..."
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="98dp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="204dp" />
 
     <Button
