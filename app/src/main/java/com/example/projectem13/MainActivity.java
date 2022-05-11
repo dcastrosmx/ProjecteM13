@@ -2,6 +2,10 @@ package com.example.projectem13;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -10,12 +14,15 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.projectem13.databinding.ActivityMainBinding;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 private ActivityMainBinding binding;
+
+//VARIABLES
+    TextView nom;
+    Button reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +44,11 @@ private ActivityMainBinding binding;
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        //Firebase
-        FirebaseDatabase.getInstance().getReference().child("ProgramingKnowLedge").child("Android").setValue("abcd");
+        //Asignar variables
+        nom = findViewById(R.id.TB_Nom_R);
+        reg = findViewById(R.id.BTN_Register);
+
+        //Referencia database¿??
     }
 
     @Override
