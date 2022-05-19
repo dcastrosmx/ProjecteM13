@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.projectem13.R;
 import com.example.projectem13.databinding.FragmentGalleryBinding;
 
 public class GalleryFragment extends Fragment {
@@ -22,14 +24,12 @@ private FragmentGalleryBinding binding;
 
     binding = FragmentGalleryBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
+    //AAA
 
-
-        //final TextView textView = binding.textGallery;
-        //galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
-
+    //BBB
         return root;
     }
+
 
 @Override
     public void onDestroyView() {

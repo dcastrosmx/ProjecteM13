@@ -1,13 +1,20 @@
 package com.example.projectem13;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
 private ActivityMainBinding binding;
 
-//VARIABLES
-    TextView nom;
-    Button reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,22 +50,15 @@ private ActivityMainBinding binding;
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //Asignar variables
-        final TextView nom = findViewById(R.id.TB_Nom_R);
-        reg = findViewById(R.id.BTN_Register);
+        final EditText nom = findViewById(R.id.TB_Nom_R);
+        Button btn_reg = (Button) findViewById(R.id.BTN_Register);
 
         //Referencia database¿??
-        DAOUser dao = new DAOUser();
-        /*
-        reg.setOnClickListener(v->{
-            User user = new User((nom.getText().toString()));
-            dao.add(user).addOnSuccessListener(suc->{
-                Toast.makeText(this,"Nom correcte", Toast.LENGTH_SHORT).show();
-            }).addOnFailureListener(er->{
-                Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-            });
-        });*/
 
     }
+
+    @Nullable
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -76,4 +73,7 @@ private ActivityMainBinding binding;
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+
 }
